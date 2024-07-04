@@ -5,11 +5,11 @@ author: MartenM
 version: ${project.version}
 api-version: "1.20"
 description: "§6The plugin to guide players around your server using tutorials."
-softdepend: [PlaceholderAPI, Multiverse-Core, MultiWorld]
+softdepend: [ PlaceholderAPI, Multiverse-Core, MultiWorld ]
 commands:
   servertutorial:
     description: "All the servertutorial plus commands"
-    aliases: [st]
+    aliases: [ st ]
 
 permissions:
   servertutorialplus.command.*:
