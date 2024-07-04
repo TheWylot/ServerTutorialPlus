@@ -14,7 +14,6 @@ import nl.martenm.servertutorialplus.points.editor.PointArg;
 import nl.martenm.servertutorialplus.points.editor.args.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Sound;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
@@ -196,8 +195,8 @@ public abstract class ServerTutorialPoint {
         }
 
         if (soundInfo != null) {
-            // loc, sound, volume, pitch <-- I forget that all the damm time.
-            player.playSound(player, soundInfo.sound.toString(), soundInfo.volume, soundInfo.pitch);
+            // entity, string, volume, pitch <-- I forget that all the damm time.
+            player.playSound(player, soundInfo.sound, soundInfo.volume, soundInfo.pitch);
         }
     }
 
@@ -227,7 +226,7 @@ public abstract class ServerTutorialPoint {
         }
 
         if (tutorialSaves.isConfigurationSection("tutorials." + ID + ".points." + i + ".sound")) {
-            Sound sound = Sound.valueOf(tutorialSaves.getString("tutorials." + ID + ".points." + i + ".sound.sound"));
+            String sound = tutorialSaves.getString("tutorials." + ID + ".points." + i + ".sound.sound");
             float pitch = Float.parseFloat(tutorialSaves.getString("tutorials." + ID + ".points." + i + ".sound.pitch"));
             float volume = Float.parseFloat(tutorialSaves.getString("tutorials." + ID + ".points." + i + ".sound.volume"));
             soundInfo = new PlayerSound(sound, pitch, volume);
@@ -287,7 +286,7 @@ public abstract class ServerTutorialPoint {
         }
 
         if (soundInfo != null) {
-            tutorialSaves.set("tutorials." + key + ".points." + i + ".sound.sound", soundInfo.sound.toString());
+            tutorialSaves.set("tutorials." + key + ".points." + i + ".sound.sound", soundInfo.sound);
             tutorialSaves.set("tutorials." + key + ".points." + i + ".sound.pitch", soundInfo.pitch);
             tutorialSaves.set("tutorials." + key + ".points." + i + ".sound.volume", soundInfo.volume);
         }

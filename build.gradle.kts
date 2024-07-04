@@ -28,7 +28,7 @@ dependencies {
     compileOnly("org.apache.commons:commons-lang3:3.14.0")
     compileOnly("com.zaxxer:HikariCP:3.4.5")
     compileOnly("com.github.cryptomorin:XSeries:9.5.0")
-    compileOnly("com.github.MartenM:SimpleCommands:1.4.2")
+    implementation("com.github.MartenM:SimpleCommands:1.4.2")
     implementation("org.bstats:bstats-bukkit:3.0.2")
     implementation("com.googlecode.json-simple:json-simple:1.1.1")
 }
@@ -38,4 +38,8 @@ tasks {
         relocate("org.bstats", "nl.martenm.libs.bstats")
         relocate("com.cryptomorin.xseries", "nl.martenm.libs.xseries")
     }
+}
+
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
 }
