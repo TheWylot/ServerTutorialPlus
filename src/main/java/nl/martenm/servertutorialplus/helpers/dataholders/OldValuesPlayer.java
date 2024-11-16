@@ -65,5 +65,6 @@ public class OldValuesPlayer {
         player.setFlying(getFlying());
         player.setGameMode(getGamemode());
         player.teleport(getLoc());
+        player.stopSound(player.getName());
     }
 }
