@@ -104,6 +104,7 @@ public class TutorialController {
             player.setAllowFlight(oldValuesPlayer.isAllowFlight());
             player.setFlying(oldValuesPlayer.getFlying());
             player.setGameMode(oldValuesPlayer.getGamemode());
+            player.stopSound(player.getName());
             if (originalLocation) {
                 player.teleport(oldValuesPlayer.getLoc());
             }
