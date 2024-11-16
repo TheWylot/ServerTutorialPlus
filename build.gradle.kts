@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "nl.martenm"
-version = "1.26.0"
+version = "1.26.1"
 description = "ServerTutorialPlus"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
